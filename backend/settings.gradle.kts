@@ -6,6 +6,4 @@ dependencyResolutionManagement {
     }
 }
 
-//includeBuild("api")
-includeBuild("app")
-includeBuild("lib")
+includeBuild("auth-service")
