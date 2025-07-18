@@ -2,14 +2,14 @@ version: '3.9'
 
 services:
   postgres:
-    image: postgres:16
+    image: postgres:17
     container_name: local-postgres
     environment:
       POSTGRES_DB: aivms
       POSTGRES_USER: aivms_user
       POSTGRES_PASSWORD: aivms_pass
     ports:
-      - "5432:5432"
+      - "5400:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -32,17 +32,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
-  mqtt:
-    image: eclipse-mosquitto:2
-    container_name: local-mqtt
-    ports:
-      - "1883:1883"
-      - "9001:9001" # WebSocket
-    volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
 
   sonarqube:
     image: sonarqube:community
