@@ -19,3 +19,5 @@ logging:
   level:
     root: INFO
     org.springframework: INFO
+    org.hibernate.SQL: OFF
+    org.hibernate.type.descriptor.sql.BasicBinder: OFF

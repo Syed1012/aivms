@@ -1,5 +1,6 @@
 package de.syed.aivms.authservice.domain
 
+
 import jakarta.persistence.*
 import java.time.Instant
 
@@ -25,8 +26,9 @@ data class User(
     @Column(name = "phone_number", nullable = false)
     val phoneNumber: String,
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val roles: String = "USER",
+    val roles: Role = Role.USER,
 
     @Column(name = "created_at", nullable = false)
     val createdAt: Instant = Instant.now(),

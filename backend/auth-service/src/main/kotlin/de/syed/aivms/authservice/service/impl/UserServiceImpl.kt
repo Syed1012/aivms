@@ -1,8 +1,9 @@
 package de.syed.aivms.authservice.service.impl
 
+import de.syed.aivms.authservice.domain.Role
 import de.syed.aivms.authservice.domain.User
 import de.syed.aivms.authservice.dto.UserRegisterRequest
-import de.syed.aivms.authservice.exception.EmailAlreadyInUseException
+import de.syed.aivms.authservice.exception.RegistrationException
 import de.syed.aivms.authservice.repository.UserRepository
 import de.syed.aivms.authservice.service.UserService
 import mu.KotlinLogging
@@ -23,24 +24,31 @@ class UserServiceImpl(
 
         if (userRepository.existsByEmail(request.email)) {
             logger.warn { "Registration failed: Email already exists -> ${request.email}" }
-            throw EmailAlreadyInUseException("Email ${request.email} is already registered")
+            throw RegistrationException(RegistrationException.emailAlreadyUsed(request.email))
         }
 
         val now = Instant.now()
+
+        val role = Role.USER  // Assign USER as a role on registration
+
         val user = User(
             email = request.email,
             password = passwordEncoder.encode(request.password),
             firstName = request.firstName,
             lastName = request.lastName,
             phoneNumber = request.phoneNumber,
-            roles = "USER",
+            roles = role,
             createdAt = now,
             updatedAt = now
         )
 
-        val savedUser = userRepository.save(user)
-        logger.info { "User successfully registered: ${savedUser.email}" }
-
-        return savedUser
+        return try {
+            val savedUser = userRepository.save(user)
+            logger.info { "User with email ${savedUser.email} registered successfully." }
+            savedUser
+        } catch (ex: Exception) {
+            logger.error(ex) { "Unexpected error while registering user with email: ${request.email}" }
+            throw RegistrationException(RegistrationException.internalError())
+        }
     }
 }
