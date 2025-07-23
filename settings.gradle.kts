@@ -9,4 +9,4 @@ dependencyResolutionManagement {
     }
 }
 
-includeBuild("backend")
+include("backend:auth-service")
