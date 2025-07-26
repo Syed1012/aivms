@@ -1,7 +1,7 @@
 package de.syed.aivms.authservice.controller
 
-import de.syed.aivms.authservice.service.EmailService
-import de.syed.aivms.authservice.service.impl.OtpService
+import de.syed.aivms.authservice.service.email.EmailService
+import de.syed.aivms.authservice.service.user.OtpService
 import mu.KotlinLogging
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

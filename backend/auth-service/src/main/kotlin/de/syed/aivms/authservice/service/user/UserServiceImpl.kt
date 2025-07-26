@@ -1,11 +1,10 @@
-package de.syed.aivms.authservice.service.impl
+package de.syed.aivms.authservice.service.user
 
 import de.syed.aivms.authservice.domain.Role
 import de.syed.aivms.authservice.domain.User
 import de.syed.aivms.authservice.dto.UserRegisterRequest
 import de.syed.aivms.authservice.exception.RegistrationException
 import de.syed.aivms.authservice.repository.UserRepository
-import de.syed.aivms.authservice.service.UserService
 import mu.KotlinLogging
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -22,9 +21,9 @@ class UserServiceImpl(
     override fun registerUser(request: UserRegisterRequest): User {
         logger.info("Received registration request for email: ${request.email}")
 
-        if (userRepository.existsByEmail(request.email)) {
+        if (userRepository.findByEmail(request.email)) {
             logger.warn { "Registration failed: Email already exists -> ${request.email}" }
-            throw RegistrationException(RegistrationException.emailAlreadyUsed(request.email))
+            throw RegistrationException(RegistrationException.Companion.emailAlreadyUsed(request.email))
         }
 
         val now = Instant.now()
@@ -48,7 +47,7 @@ class UserServiceImpl(
             savedUser
         } catch (ex: Exception) {
             logger.error(ex) { "Unexpected error while registering user with email: ${request.email}" }
-            throw RegistrationException(RegistrationException.internalError())
+            throw RegistrationException(RegistrationException.Companion.internalError())
         }
     }
 }

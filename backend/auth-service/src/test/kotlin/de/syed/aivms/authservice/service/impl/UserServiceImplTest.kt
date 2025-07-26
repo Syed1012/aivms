@@ -5,6 +5,7 @@ import de.syed.aivms.authservice.domain.User
 import de.syed.aivms.authservice.dto.UserRegisterRequest
 import de.syed.aivms.authservice.exception.RegistrationException
 import de.syed.aivms.authservice.repository.UserRepository
+import de.syed.aivms.authservice.service.user.UserServiceImpl
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

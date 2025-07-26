@@ -10,3 +10,6 @@ dependencyResolutionManagement {
 }
 
 include("backend:auth-service")
+include("backend:vehicle-service")
+include("backend:booking-service")
+include("backend:notification-service")

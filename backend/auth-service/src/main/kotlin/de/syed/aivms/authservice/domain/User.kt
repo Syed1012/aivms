@@ -1,15 +1,16 @@
 package de.syed.aivms.authservice.domain
 
-
 import jakarta.persistence.*
 import java.time.Instant
+import java.util.UUID
 
 @Entity
 @Table(name = "users")
 data class User(
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+    @GeneratedValue
+    @Column(name = "id", nullable = false, updatable = false, columnDefinition = "UUID")
+    val id: UUID? = null,
 
     @Column(nullable = false, unique = true)
     val email: String,

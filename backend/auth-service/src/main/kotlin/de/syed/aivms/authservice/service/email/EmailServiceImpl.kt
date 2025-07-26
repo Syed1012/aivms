@@ -1,6 +1,5 @@
-package de.syed.aivms.authservice.service.impl
+package de.syed.aivms.authservice.service.email
 
-import de.syed.aivms.authservice.service.EmailService
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
 

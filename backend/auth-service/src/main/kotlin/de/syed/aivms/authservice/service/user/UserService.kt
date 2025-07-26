@@ -1,4 +1,4 @@
-package de.syed.aivms.authservice.service
+package de.syed.aivms.authservice.service.user
 
 import de.syed.aivms.authservice.domain.User
 import de.syed.aivms.authservice.dto.UserRegisterRequest

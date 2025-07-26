@@ -28,7 +28,7 @@ class SecurityConfig {
             .authorizeHttpRequests {
                 it
                     .requestMatchers(
-                        "/api/auth/register",
+                        "/api/v1/register",
                         "/api/auth/login",
                         "/api/auth/otp/**",
                         "/v3/api-docs/**",

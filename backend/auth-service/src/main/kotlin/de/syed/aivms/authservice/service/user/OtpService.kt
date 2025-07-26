@@ -1,4 +1,4 @@
-package de.syed.aivms.authservice.service.impl
+package de.syed.aivms.authservice.service.user
 
 import de.syed.aivms.authservice.domain.OtpCode
 import de.syed.aivms.authservice.repository.OtpCodeRepository
