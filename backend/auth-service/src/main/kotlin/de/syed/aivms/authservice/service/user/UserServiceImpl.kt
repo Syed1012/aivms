@@ -21,14 +21,13 @@ class UserServiceImpl(
     override fun registerUser(request: UserRegisterRequest): User {
         logger.info("Received registration request for email: ${request.email}")
 
-        if (userRepository.findByEmail(request.email)) {
+        if (userRepository.existsByEmail(request.email)) {
             logger.warn { "Registration failed: Email already exists -> ${request.email}" }
             throw RegistrationException(RegistrationException.Companion.emailAlreadyUsed(request.email))
         }
 
         val now = Instant.now()
-
-        val role = Role.USER  // Assign USER as a role on registration
+        val role = Role.USER  // Default role on registration
 
         val user = User(
             email = request.email,
@@ -36,7 +35,7 @@ class UserServiceImpl(
             firstName = request.firstName,
             lastName = request.lastName,
             phoneNumber = request.phoneNumber,
-            roles = role,
+            role = role,
             createdAt = now,
             updatedAt = now
         )

@@ -29,7 +29,7 @@ data class User(
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val roles: Role = Role.USER,
+    val role: Role = Role.USER,
 
     @Column(name = "created_at", nullable = false)
     val createdAt: Instant = Instant.now(),
