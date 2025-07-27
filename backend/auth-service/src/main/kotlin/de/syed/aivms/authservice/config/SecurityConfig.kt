@@ -29,8 +29,8 @@ class SecurityConfig {
                 it
                     .requestMatchers(
                         "/api/v1/register",
-                        "/api/auth/login",
-                        "/api/auth/otp/**",
+                        "/api/v1/login",
+                        "/api/v1/otp/**",
                         "/v3/api-docs/**",
                         "/swagger-ui/**",
                         "/swagger-ui.html",

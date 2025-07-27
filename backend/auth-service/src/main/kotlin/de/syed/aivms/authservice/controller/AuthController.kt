@@ -7,11 +7,12 @@ import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1")
 @Tag(name = "Authentication", description = "User login and authentication")
 class AuthController (
     private val authService: AuthService
@@ -19,7 +20,7 @@ class AuthController (
 
     @PostMapping("/login")
     @Operation(summary = "Login user", description = "Authenticates user and returns JWT token")
-    fun login(request: LoginRequest): ResponseEntity<LoginResponse> {
+    fun login(@RequestBody request: LoginRequest): ResponseEntity<LoginResponse> {
         val response = authService.login(request)
         return ResponseEntity.ok(response)
     }
