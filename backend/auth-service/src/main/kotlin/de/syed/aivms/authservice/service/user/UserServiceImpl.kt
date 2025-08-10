@@ -35,6 +35,7 @@ class UserServiceImpl(
             firstName = request.firstName,
             lastName = request.lastName,
             phoneNumber = request.phoneNumber,
+            address = "",  // Optional field can be populated later during booking or lending.
             role = role,
             createdAt = now,
             updatedAt = now

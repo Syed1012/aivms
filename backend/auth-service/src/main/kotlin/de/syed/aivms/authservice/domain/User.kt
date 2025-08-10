@@ -6,7 +6,8 @@ import java.util.UUID
 
 @Entity
 @Table(name = "users")
-data class User(
+@Suppress("unused")
+class User(
     @Id
     @GeneratedValue
     @Column(name = "id", nullable = false, updatable = false, columnDefinition = "UUID")
@@ -30,6 +31,9 @@ data class User(
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     val role: Role = Role.USER,
+
+    @Column(nullable = true)
+    val address: String,
 
     @Column(name = "created_at", nullable = false)
     val createdAt: Instant = Instant.now(),
