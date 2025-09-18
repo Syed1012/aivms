@@ -29,12 +29,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-	// Database
+	// Database & Actuator
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	runtimeOnly("org.postgresql:postgresql")
-
-	// Liquibase
-	implementation("org.liquibase:liquibase-core")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    runtimeOnly("org.postgresql:postgresql")
 
 	// JWT
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
@@ -44,6 +42,9 @@ dependencies {
 	// Logging
 	implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+
+	// spring-dotenv
+	implementation("me.paulschwarz:spring-dotenv:4.0.0")
 
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

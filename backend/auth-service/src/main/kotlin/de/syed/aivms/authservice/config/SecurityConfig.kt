@@ -12,7 +12,9 @@ import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 @Configuration
-class SecurityConfig {
+class SecurityConfig(
+    private val jwtUtil: JwtUtil
+) {
 
     @Bean
     fun passwordEncoder(): PasswordEncoder = BCryptPasswordEncoder()
@@ -21,7 +23,7 @@ class SecurityConfig {
     fun authenticationManager(config: AuthenticationConfiguration): AuthenticationManager = config.authenticationManager
 
     @Bean
-    fun jwtAuthenticationFilter(): JwtAuthenticationFilter = JwtAuthenticationFilter(JwtUtil())
+    fun jwtAuthenticationFilter(): JwtAuthenticationFilter = JwtAuthenticationFilter(jwtUtil)
 
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain{
@@ -33,8 +35,8 @@ class SecurityConfig {
                     .requestMatchers(
                         "/api/v1/register",
                         "/api/v1/login",
-                        "/api/v1/otp/**",
                         "/api/v1/refresh",
+                        "/api/v1/otp/**",
                         "/v3/api-docs/**",
                         "/swagger-ui/**",
                         "/swagger-ui.html",
@@ -42,8 +44,10 @@ class SecurityConfig {
                     ).permitAll()
                     .anyRequest().authenticated()
             }
+            // add jwt filter before UsernamePasswordAuthenticationFilter
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter::class.java)
             .httpBasic { }
+
         return http.build()
     }
 }

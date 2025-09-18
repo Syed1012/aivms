@@ -1,0 +1,10 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5400/aivms
+    username: aivms_user
+    password: aivms_pass
+
+jwt:
+  secret: wefjoruh29881094071hkjhiwuehrbjiu824r923rj
+  expiration: 3600000

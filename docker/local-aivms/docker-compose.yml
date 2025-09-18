@@ -1,13 +1,15 @@
-version: '3.9'
+
 
 services:
   postgres:
     image: postgres:17
     container_name: local-postgres
+    env_file:
+      - ./.env
     environment:
-      POSTGRES_DB: aivms
-      POSTGRES_USER: aivms_user
-      POSTGRES_PASSWORD: aivms_pass
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5400:5432"
     volumes:
@@ -21,12 +23,14 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     container_name: local-rabbitmq
+    env_file:
+      - ./.env
     ports:
       - "5672:5672"
       - "15672:15672" # management UI
     environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     healthcheck:
       test: ["CMD", "rabbitmqctl", "status"]
       interval: 10s
@@ -36,6 +40,8 @@ services:
   sonarqube:
     image: sonarqube:community
     container_name: local-sonarqube
+    env_file:
+      - ./.env
     ports:
       - "9000:9000"
     environment:

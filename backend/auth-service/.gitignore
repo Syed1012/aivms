@@ -1,0 +1,7 @@
+
+# env file
+.env
+
+# application yaml files
+application-*.yml
+
