@@ -1,0 +1,237 @@
+### Register User 1
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "alice.smith@example.com",
+  "password": "Alice@1234",
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "phoneNumber": "1111111111",
+  "address": "12 Oak Street"
+}
+
+###
+
+### Register User 2
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "bob.jones@example.com",
+  "password": "Bob@1234",
+  "firstName": "Bob",
+  "lastName": "Jones",
+  "phoneNumber": "2222222222",
+  "address": "34 Pine Street"
+}
+
+###
+
+### Register User 3
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "carol.white@example.com",
+  "password": "Carol@1234",
+  "firstName": "Carol",
+  "lastName": "White",
+  "phoneNumber": "3333333333",
+  "address": "56 Maple Avenue"
+}
+
+###
+
+### Register User 4
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "david.miller@example.com",
+  "password": "David@1234",
+  "firstName": "David",
+  "lastName": "Miller",
+  "phoneNumber": "4444444444",
+  "address": "78 Birch Road"
+}
+
+###
+
+### Register User 5
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "emma.brown@example.com",
+  "password": "Emma@1234",
+  "firstName": "Emma",
+  "lastName": "Brown",
+  "phoneNumber": "5555555555",
+  "address": "90 Cedar Street"
+}
+
+###
+
+### Register User 6
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "frank.taylor@example.com",
+  "password": "Frank@1234",
+  "firstName": "Frank",
+  "lastName": "Taylor",
+  "phoneNumber": "6666666666",
+  "address": "123 Spruce Lane"
+}
+
+###
+
+### Register User 7
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "grace.lee@example.com",
+  "password": "Grace@1234",
+  "firstName": "Grace",
+  "lastName": "Lee",
+  "phoneNumber": "7777777777",
+  "address": "456 Willow Drive"
+}
+
+###
+
+### Register User 8
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "henry.king@example.com",
+  "password": "Henry@1234",
+  "firstName": "Henry",
+  "lastName": "King",
+  "phoneNumber": "8888888888",
+  "address": "789 Poplar Avenue"
+}
+
+###
+
+### Register User 9
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "isabella.wright@example.com",
+  "password": "Isabella@1234",
+  "firstName": "Isabella",
+  "lastName": "Wright",
+  "phoneNumber": "9999999999",
+  "address": "321 Chestnut Street"
+}
+
+###
+
+### Register User 10
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "jack.harris@example.com",
+  "password": "Jack@1234",
+  "firstName": "Jack",
+  "lastName": "Harris",
+  "phoneNumber": "1010101010",
+  "address": "654 Walnut Street"
+}
+
+###
+
+### Register User 11
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "karen.martin@example.com",
+  "password": "Karen@1234",
+  "firstName": "Karen",
+  "lastName": "Martin",
+  "phoneNumber": "1112223333",
+  "address": "987 Elm Street"
+}
+
+###
+
+### Register User 12
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "leo.scott@example.com",
+  "password": "Leo@1234",
+  "firstName": "Leo",
+  "lastName": "Scott",
+  "phoneNumber": "2223334444",
+  "address": "159 Maple Avenue"
+}
+
+###
+
+### Register User 13
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "mia.adams@example.com",
+  "password": "Mia@1234",
+  "firstName": "Mia",
+  "lastName": "Adams",
+  "phoneNumber": "3334445555",
+  "address": "753 Pine Road"
+}
+
+###
+
+### Register User 14
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "noah.evans@example.com",
+  "password": "Noah@1234",
+  "firstName": "Noah",
+  "lastName": "Evans",
+  "phoneNumber": "4445556666",
+  "address": "852 Birch Lane"
+}
+
+###
+
+### Register User 15
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "olivia.turner@example.com",
+  "password": "Olivia@1234",
+  "firstName": "Olivia",
+  "lastName": "Turner",
+  "phoneNumber": "5556667777",
+  "address": "951 Cedar Drive"
+}
